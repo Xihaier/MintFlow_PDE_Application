@@ -34,7 +34,7 @@ Usage — PCFM
     uv run python scripts/run_sampling.py \\
         --dataset diffusion --method pcfm \\
         --config configs/heat.yml --checkpoint logs/diffusion/latest.pt \\
-        --num-samples 256 --pcfm-n-step 100 --pcfm-newton-steps 10 \\
+        --num-samples 256 --pcfm-n-step 100 --pcfm-newton-steps 1 \\
         --batch-size 16 --seed 0 --device cuda \\
         --output-dir outputs/sampling --evaluate-constraints
 
@@ -381,7 +381,7 @@ def _build_parser() -> argparse.ArgumentParser:
     pcfm_g = p.add_argument_group("PCFM options (--method pcfm)")
     pcfm_g.add_argument("--pcfm-n-step",      type=int,   default=100,
                         help="Number of Euler integration steps.")
-    pcfm_g.add_argument("--pcfm-newton-steps", type=int,  default=10,
+    pcfm_g.add_argument("--pcfm-newton-steps", type=int,  default=1,
                         help="Newton iterations per projection step.")
     pcfm_g.add_argument("--pcfm-tol",         type=float, default=1e-6,
                         help="Jacobian solve regularisation (eps in J@J^T + eps*I).")

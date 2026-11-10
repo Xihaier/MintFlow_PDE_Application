@@ -344,7 +344,7 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--python", default=sys.executable)
     p.add_argument("--batch-size", type=int, default=16)
     p.add_argument("--euler-steps", type=int, default=100)
-    p.add_argument("--pcfm-newton-steps", type=int, default=10)
+    p.add_argument("--pcfm-newton-steps", type=int, default=1)
     p.add_argument("--diffusionpde-eta", type=float, default=1.0)
     p.add_argument("--dflow-n-iter", type=int, default=20)
     p.add_argument("--dflow-lr", type=float, default=1.0)
